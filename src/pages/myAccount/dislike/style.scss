@@ -1,0 +1,49 @@
+@import "../../../mixin.scss";
+
+.AccountPage {
+    min-height: 530px;
+    padding-top: 100px;
+    .pageHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        flex-direction: column;
+        @include md {
+            flex-direction: row;
+        }
+    }
+    .pageTitle {
+        font-size: 24px;
+        line-height: 34px;
+        color: white;
+        margin-bottom: 20px;
+        @include md {
+            margin-bottom: 0;
+        }
+    }
+    .content {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        margin-bottom: 50px;
+        @include md {
+            gap: 20px;
+        }
+        .movieCard {
+            .posterBlock {
+                margin-bottom: 30px;
+            }
+        }
+        .noItem {
+            display: flex;
+            p {
+                font-size: 20px;
+                color: rgb(105, 105, 105);
+            }
+        }
+    }
+}
+.dislike {
+    padding-top: 70px !important;
+    border-top: 3px solid white;
+}

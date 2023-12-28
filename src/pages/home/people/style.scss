@@ -1,0 +1,67 @@
+@import "../../../mixin.scss";
+
+.certificate {
+    position: relative;
+    margin-top: 50px;
+
+    .backdrop-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.2;
+        overflow: hidden;
+        z-index: -10;
+        .lazy-load-image-background {
+            width: 100%;
+            height: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .opacity-layer {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(180deg, rgba(4, 21, 45, 0) 0%, #04152d 79.17%);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .opacity-layer-up {
+        width: 100%;
+        height: 250px;
+        background: linear-gradient(360deg, rgba(4, 21, 45, 0) 0%, #04152d 79.17%);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+.carouselSection3 {
+    height: 1000px;
+    position: relative;
+    margin-bottom: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    & > .contentWrapper {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .carouselTitle {
+        font-size: 34px;
+        color: white;
+        font-weight: bold;
+    }
+}
