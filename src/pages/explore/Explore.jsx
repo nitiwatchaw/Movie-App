@@ -39,29 +39,31 @@ const Explore = () => {
 
   const fetchInitialData = () => {
     setLoading(true);
-    fetchDataFromApi(`/discover/${mediaType}`, filters).then((res) => {
-      setData(res);
-      setPageNum((prev) => prev + 1);
-      setLoading(false);
-    });
+    fetchDataFromApi(`/discover/${mediaType}`, filters)
+      .then((res) => {
+        setData(res);
+        setPageNum((prev) => prev + 1);
+        setLoading(false);
+      });
+    console.log(`/discover/${mediaType} `)
   };
 
 
   const fetchNextPageData = () => {
     fetchDataFromApi(
-      `/discover/${mediaType}?page=${pageNum}`,
-      filters
-    ).then((res) => {
-      if (data?.results) {
-        setData({
-          ...data,
-          results: [...data?.results, ...res.results],
-        });
-      } else {
-        setData(res);
-      }
-      setPageNum((prev) => prev + 1);
-    });
+      `/discover/${mediaType}?page=${pageNum}`, filters)
+      .then((res) => {
+        if (data?.results) {
+          setData({
+            ...data,
+            results: [...data?.results, ...res.results],
+          });
+        } else {
+          setData(res);
+        }
+        setPageNum((prev) => prev + 1);
+      });
+   
   };
 
   useEffect(() => {

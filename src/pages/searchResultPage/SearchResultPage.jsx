@@ -22,6 +22,7 @@ const SearchResultPage = () => {
         setPageNum((prev) => prev + 1)
         setLoading((false))
       })
+
   }
 
 

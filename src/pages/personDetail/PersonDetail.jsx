@@ -48,7 +48,7 @@ const PersonDetail = () => {
         )
     }
 
-    console.log(people)
+
 
     return (
         <div className="personDetail">

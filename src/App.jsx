@@ -21,7 +21,6 @@ function App() {
   const fetchApiConfigure = () => {
     fetchDataFromApi('/configuration')
       .then((res) => {
-        console.log('configure API', res)
 
         const url = {
           backdrop: res.images.secure_base_url + "original",
@@ -52,14 +51,16 @@ function App() {
 
     })
 
+  
     // Use Promise.all to wait for all promises in the array to resolve
     const data = await Promise.all(promises)
-
+ 
 
     // การเปลี่ยนไอดี object ใน arr ให้ตรงกับค่า id ขอตัวนั้นๆ
     data.map(({ genres }) => {
       return genres.map((item) => (allGenres[item.id] = item))
     })
+
     dispatch(getGenres(allGenres))
   }
 
